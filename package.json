@@ -1,0 +1,31 @@
+{
+  "name": "contract-secure",
+  "version": "1.0.0",
+  "description": "Smart contract secure test game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/vsszhang/contract-secure.git"
+  },
+  "keywords": [
+    "secure",
+    "test"
+  ],
+  "author": "vsszhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vsszhang/contract-secure/issues"
+  },
+  "homepage": "https://github.com/vsszhang/contract-secure#readme",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.6",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "chai": "^4.3.6",
+    "ethereum-waffle": "^3.4.4",
+    "ethers": "^5.6.8",
+    "hardhat": "^2.9.7"
+  }
+}
