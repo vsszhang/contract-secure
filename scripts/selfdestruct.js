@@ -22,7 +22,6 @@ async function main() {
     (await tx).wait;
 
     console.log(`owenr balance: ${ethers.utils.formatEther(await owner.getBalance())} ether`);
-    // console.log(`balance: ${await selfdestruct.provider.getBalance(selfdestruct.address)}`);
     console.log(`contract Selfdestruct balance: ${ethers.utils.formatEther(await selfdestruct.provider.getBalance(selfdestruct.address))} ether`);
 
     console.log(`\nowner try to call num()...`);
