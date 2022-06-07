@@ -1,4 +1,9 @@
-const { ethers } = require("hardhat");
+//
+// @description selfdestruct func can destruct contract code on blockchain and
+// transfer all contract balance to selfdestruct caller
+//
+
+import { ethers } from "hardhat";
 
 async function main() {
     const [ owner, user ] = await ethers.getSigners();
@@ -7,19 +12,29 @@ async function main() {
     await selfdestruct.deployed();
     console.log(`selfdestruct addr: ${selfdestruct.address}`);
 
-    // console.log(`owner send 1 Ether to Selfdestruct contract...`);
-    console.log(`owenr balance: ${ethers.utils.formatEther(await owner.getBalance())} ether`);
+    console.log(`\nowenr balance: ${ethers.utils.formatEther(await owner.getBalance())} ether`);
+    console.log(`owner send 1000 Ether to Selfdestruct contract...`);
     let tx = owner.sendTransaction({
         to: selfdestruct.address,
-        gasPrice: 766828498,
-        value: ethers.utils.parseEther('1.0')
+        gasPrice: 966828498,
+        value: ethers.utils.parseEther('1000.0')
     });
     (await tx).wait;
+
     console.log(`owenr balance: ${ethers.utils.formatEther(await owner.getBalance())} ether`);
-    // console.log(`user balance: ${await user.getBalance()} ether`);
-    // console.log(`user call killmyself()...`);
-    // await selfdestruct.connect(user).killmyself(user.address);
-    // console.log(`user balance: ${await user.getBalance()} ether`);
+    // console.log(`balance: ${await selfdestruct.provider.getBalance(selfdestruct.address)}`);
+    console.log(`contract Selfdestruct balance: ${ethers.utils.formatEther(await selfdestruct.provider.getBalance(selfdestruct.address))} ether`);
+
+    console.log(`\nowner try to call num()...`);
+    console.log(`num: ${await selfdestruct.num()}`);
+    console.log(`user balance: ${ethers.utils.formatEther(await user.getBalance())} ether`);
+    console.log(`user call killmyself()...`);
+    await selfdestruct.connect(user).killmyself(user.address);
+    console.log(`user balance: ${ethers.utils.formatEther(await user.getBalance())} ether`);
+
+    // revert because contract code was destructed when user call selfdestruct...
+    console.log(`\nowner try to call num()...`);
+    console.log(`num: ${await selfdestruct.num()}`);
 }
 
 main()
