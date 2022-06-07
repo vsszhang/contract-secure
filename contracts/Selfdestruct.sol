@@ -3,6 +3,7 @@ pragma solidity ^0.8.0;
 
 contract Selfdestruct {
     address owner;
+    uint256 public num = 1;
 
     constructor() payable {
         owner = msg.sender;
