@@ -1,9 +1,12 @@
 //
+// @dev Simulate an selfdestruct func attack
 // @description selfdestruct func can destruct contract code on blockchain and
 // transfer all contract balance to selfdestruct caller
 //
+// @web https://cloud.tencent.com/developer/article/1606984?from=article.detail.1595551
+//
 
-import { ethers } from "hardhat";
+const { ethers } = require('hardhat');
 
 async function main() {
     const [ owner, user ] = await ethers.getSigners();
