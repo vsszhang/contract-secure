@@ -10,6 +10,12 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   }
 });
 
+task("parseEther", "parse number string to a BigNumber")
+  .addParam("num", "string of number")
+  .setAction(async (taskArgs, hre) => {
+    console.log(hre.ethers.utils.parseEther(taskArgs.num));
+  });
+
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
 
