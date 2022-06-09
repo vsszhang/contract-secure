@@ -16,6 +16,12 @@ task("parseEther", "parse number string to a BigNumber")
     console.log(hre.ethers.utils.parseEther(taskArgs.num));
   });
 
+task("formatEther", "format a BigNumber to a ether number")
+  .addParam("num", "BigNumber")
+  .setAction(async (taskArgs, hre) => {
+    console.log(hre.ethers.utils.formatEther(taskArgs.num));
+  });
+
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
 
