@@ -1,17 +1,22 @@
-# Basic Sample Hardhat Project
+# What is contract-secure?
+Contract-secure is a smart contract secure test game project.
+👾solidity game + 🥷🏼attack contract + ⚙️automate JS script
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+Using figurative sample game to show you how attacker attacks an contract.
+
+Also, this is a 👷Hardhat Project, you need to know how to operate it first.
+
+# Handle This Hardhat Project
+Besides the CL below, we have some special hardhat tasks for you. For instance,
+`parseEther` and `formatEther`, all these new tasks come from ethers.js.
 
 Try running some of the following tasks:
 
 ```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+// run command to check task
+npx hardhat
+
+// special task
+npx hardhat [GLOBAL OPTIONS] parseEther --num <STRING>
+npx hardhat [GLOBAL OPTIONS] formatEther --num <STRING>
 ```
-# contract-secure
-Smart contract secure test game
