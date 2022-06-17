@@ -5,7 +5,7 @@
 // (transfer token to attack contract will trigger the revert fallback func, contract
 // auction's bid() func transfer 'topBid' amount of token to it when next bidder comes.)
 //
-// @web https://cloud.tencent.com/developer/article/1606984?from=article.detail.1595551
+// @reference https://cloud.tencent.com/developer/article/1606984?from=article.detail.1595551
 //
 
 const { ethers } = require('hardhat');

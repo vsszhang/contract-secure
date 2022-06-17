@@ -2,7 +2,8 @@
 // @dev Simulate a reentrance attack
 // @description Contract calls a receive()/fallback() func when the token is sent.
 // Using above description to launch a reentrancy attack
-// @web https://learnblockchain.cn/article/3278, or other hardhat sample:
+//
+// @reference https://learnblockchain.cn/article/3278, or other hardhat sample:
 // https://learnblockchain.cn/article/4166
 //
 
