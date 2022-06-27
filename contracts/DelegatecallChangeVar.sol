@@ -9,7 +9,7 @@ contract Lib {
     }
 }
 
-contract DelegateControl {
+contract DelegateControlV2 {
     address public lib;
     address public owner;
     
@@ -24,14 +24,14 @@ contract DelegateControl {
     }
 }
 
-contract Attack {
+contract AttackDelegateV2 {
     address public lib;
     address public master;
 
-    DelegateControl public delegate;
+    DelegateControlV2 public delegate;
 
     constructor(address _delegate) {
-        delegate = DelegateControl(_delegate);
+        delegate = DelegateControlV2(_delegate);
     }
 
     function changeYourOwner() public {
