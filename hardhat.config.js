@@ -1,4 +1,5 @@
 require("@nomiclabs/hardhat-waffle");
+require("hardhat-gas-reporter");
 
 const { 
   privateKeyAlith,
@@ -46,6 +47,10 @@ module.exports = {
         privateKeyCharleth
       ] 
     }
+  },
+
+  gasReporter: {
+    enabled: (process.env.REPORT_GAS) ? true : false
   }
 
 };
