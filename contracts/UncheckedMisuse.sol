@@ -5,7 +5,6 @@ contract UncheckedMisuse {
     mapping (address=>uint256) public balance;
 
     function deposit(uint256 _num) public returns (uint256) {
-        // TODO: add integer overflow situation
         require(_num <= 2 ** 256 -1, "Your deposit too much number at once!!");
         balance[msg.sender] += _num;
         return balance[msg.sender];
