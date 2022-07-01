@@ -12,9 +12,13 @@
 // situation. You can use 'unchecked' syntax to uncheck integer underflow situation
 // in solidity 0.8.0 version. Using 'unchecked' syntax can skip solidity safe 
 // check, it would decrease gas burning, but you need keep safe first.
+//
 // You can add a 'require' check before 'unchecked' check.
 // You can see the gas use is :
 // only `unchecked {...}` < directly use(no 'require' and 'uncheck') < `require (...)` and `unchecked {...}`
+//
+// Learn something about it:
+// https://stackoverflow.com/questions/70986854/what-is-the-benefit-of-using-uncheked
 //
 // We should know one thing, all solidity version (0.8.15 now latest) would revert
 // transaction when meet with integer overflow condition.
